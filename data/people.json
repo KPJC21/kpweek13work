@@ -1,0 +1,26 @@
+[
+  { 
+    "name": "Michael Mason",
+    "email": "mmason@coder.com",
+    "phone": "707-458-7594",
+    "birthdate": "06/06/2010",
+    "id": 1,
+    "relatedid": 4
+  },
+  { 
+    "name": "Lewis Jefferson",
+    "email": "ljefferson@online.com",
+    "phone": "808-745-6900",
+    "birthdate": "08/18/2008",
+    "id": 2,
+    "relatedid": 5
+  },
+  { 
+    "name": "Casey Charles",
+    "email": "ccharles@coder.com",
+    "phone": "707-949-6790",
+    "birthdate": "12/25/2001",
+    "id": 3,
+    "relatedid": 6
+  }
+]
