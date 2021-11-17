@@ -21,7 +21,7 @@ export default function Layout( { children, home } ) {
         )
       }
       <footer>
-        <p>List of names and contact info</p>
+        <p>Welcome to my post info and link</p>
       </footer>
     </div>
   );

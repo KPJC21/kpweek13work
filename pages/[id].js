@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/layout';
 import { getAllIds, getData } from '../lib/data';
+import Link from 'next/link';
 
 export async function getStaticProps({ params }) {
   const itemData = await getData(params.id);
@@ -13,7 +14,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllIds();
+  const paths = await getAllIds();
   return {
     paths,
     fallback: false
@@ -25,15 +26,16 @@ export default function Entry({ itemData }) {
     <Layout>
       <article className="card col-6">
         <div className="card-body">
-          <h5 className="card-title">{itemData.name}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{itemData.phone}</h6>
-          <p className="card-text">{itemData.birthdate}</p>
-          <a href={'mailto:' + itemData.email} className="card-link">{itemData.email}</a>
-          <h4 className="card col-7">{itemData.person2.name}</h4>
-          <h5 className="card-title">{itemData.person2.phone}</h5>
-          <p className="card-text">{itemData.person2.birthdate}</p>
-          <a href={'mailto:' + itemData.person2.email} className="card-link">{itemData.person2.email}</a>
-          <p className="card-text">A friend</p>
+          <h1 className="card-title">{itemData.post_title}</h1>
+          <h3 className="card-body">{itemData.post_content}</h3>
+          <h5 className="card-body">{itemData.post_status}</h5>
+          <h5 className="card-body">{itemData.post_date_gmt}</h5>
+          <Link href={`${itemData?.guid}`}>
+                      <a className="btn btn-primary">See this post</a>
+              </Link>
+
+
+          
         </div>
       </article>
     </Layout>
